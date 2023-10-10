@@ -2,12 +2,9 @@ import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { User } from 'src/users/entities/user.entity'
 import { Repository } from 'typeorm'
-import { hashSync } from 'bcrypt'
 import { comparePasswords, hash } from 'src/utils/hash'
 import { JwtService } from '@nestjs/jwt'
-import { ZodValidationException } from 'nestjs-zod'
 import { loginData, authResponse } from '@/auth/interfaces/auth.interfaces'
-import { SignUpDto } from '@/auth/dto/sign-up.dto'
 
 @Injectable()
 export class AuthService {

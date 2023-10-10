@@ -13,7 +13,7 @@ export class SignUpDto {
   email: string
 
   @IsString()
-  @IsAlreadyRegister()
+  @IsAlreadyRegister({exceptCurrent : true})
   username: string
 
   @IsString()
