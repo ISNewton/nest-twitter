@@ -34,6 +34,10 @@ async function bootstrap() {
   if (!dataSource.isInitialized) {
     await dataSource.initialize()
   }
-  await app.listen(3000)
+
+  app.enableCors({
+    origin:'*' 
+  })
+  await app.listen(3001)
 }
 bootstrap()
