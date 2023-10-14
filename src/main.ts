@@ -25,7 +25,7 @@ async function bootstrap() {
         errors.map(error => {
           return {
             field: error.property,
-            errors: error.constraints,
+            errors: Object.values(error.constraints ?? {}),
           }
         })
       )

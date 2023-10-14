@@ -7,6 +7,7 @@ import { User } from './users/entities/user.entity'
 import { AuthModule } from './auth/auth.module'
 import { ZodValidationPipe } from 'nestjs-zod'
 import { APP_PIPE } from '@nestjs/core'
+import { TweetsModule } from './tweets/tweets.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { APP_PIPE } from '@nestjs/core'
     }),
     UsersModule,
     AuthModule,
+    TweetsModule,
   ],
   controllers: [AppController],
   providers: [

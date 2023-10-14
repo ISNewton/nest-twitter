@@ -5,6 +5,7 @@ import { Repository } from 'typeorm'
 import { comparePasswords, hash } from 'src/utils/hash'
 import { JwtService } from '@nestjs/jwt'
 import { loginData, authResponse } from '@/auth/interfaces/auth.interfaces'
+import { ValidationError } from 'class-validator'
 
 @Injectable()
 export class AuthService {
