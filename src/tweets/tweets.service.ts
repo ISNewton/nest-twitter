@@ -11,13 +11,24 @@ export class TweetsService {
     @InjectRepository(Tweet) private tweetRepostory: Repository<Tweet>,
   ) { }
   async getAll() {
-    return await this.tweetRepostory.find()
+    return await this.tweetRepostory.find({
+      relations: {
+        user: true,
+      },
+      select: {
+        user: {
+          id: true,
+          name: true,
+          username: true,
+        },
+      },
+    })
   }
 
-  async store(data: CreateTweetDto , user:any):Promise<Tweet> {
+  async store(data: CreateTweetDto, user: any): Promise<Tweet> {
     return await this.tweetRepostory.save({
       content: data.content,
-      user:user.id,
+      user: user.id,
     })
   }
 }

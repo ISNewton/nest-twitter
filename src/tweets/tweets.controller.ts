@@ -12,8 +12,8 @@ export class TweetsController {
   ) {}
 
   @Get('/')
-  async getAll() {
-    return this.tweetsService.getAll()
+  async getAll(): Promise<Tweet[]> {
+    return await this.tweetsService.getAll()
   }
 
 
