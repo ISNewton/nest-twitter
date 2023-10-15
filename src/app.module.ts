@@ -20,6 +20,7 @@ import { TweetsModule } from './tweets/tweets.module';
       database: 'nest_twitter',
       entities: [User],
       synchronize: true,
+      autoLoadEntities:true,
     }),
     UsersModule,
     AuthModule,
@@ -31,7 +32,6 @@ import { TweetsModule } from './tweets/tweets.module';
     {
       provide: APP_PIPE,
       useClass: ZodValidationPipe,
-      
     },
   ],
 })
